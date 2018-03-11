@@ -1,0 +1,891 @@
+.noActiveTransform:active {
+    transform: none !important;
+}
+
+
+.grid_content .top_line {
+    background: #fcfcfc; /* Old browsers */
+    background: linear-gradient(to top, #fcfcfc 0%,#f5f5f5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+    height: 40px;
+    border-bottom: 1px solid #cdd6db;
+}
+
+.rsTabPanel .rsTabRightPanel {
+    float: right; 
+}
+
+.grid_content .tabs ul {
+    list-style: none;
+    float: left;
+}
+
+.grid_content .tabs li {
+    float: left;
+    font-size: 13px;
+    padding-top: 12px;
+    color: #777777;
+    text-shadow: 0 1px 0 #1B5E8A;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-right: 1px solid #e7e7e7;
+    height: 28px;
+    cursor: pointer;
+}
+
+.tab_active {
+    background: #488ad2;
+    border-bottom: 1px solid #488ad2;
+    color: #fff !important;
+}
+
+    .tab_active:hover {
+        background: #488ad2 !important;
+        border-bottom: 1px solid #488ad2 !important;
+        color: #fff !important;
+    }
+
+.grid_content .tabs li:hover {
+    background: none repeat scroll 0 0 #606C78;
+    border-bottom: 1px solid #488AD2;
+    color: #FFFFFF;
+    cursor: pointer;
+    -ms-text-shadow: 0 1px 0 #1B5E8A;
+    text-shadow: 0 1px 0 #1B5E8A;
+}
+
+.grid_content .tabs {
+    float: left;
+}
+
+.grid_content .period {
+    float: right;
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+    .grid_content .period .white_bg {
+        float: left;
+        background: #FFF;
+        -ms-box-shadow: 0px 0px 3px #BABABA;
+        box-shadow: 0px 0px 3px #BABABA;
+        padding: 4px 10px;
+        font-size: 11px;
+        color: #777777;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        background-position: -109px -6px;
+        height: 13px;
+        border: none;
+    }
+
+    .grid_content .period .p_image {
+        background: url('WebResource.axd?d=GQaEDgbfxg5yCCa5uiLREozMnDByzT5-qqhzGyl_3ArG-n8sWmNmnY-mtvJhbuT_LZEF9bWgbRma5lhwmbcYnW6MCGHTwr_iuEHfSzsT5z-vfrbQV6Iz-Rva3vOIFlbzdyigIZfwac8D7R086qjwMQCg9L01&t=635791181779487992')  no-repeat scroll -76px -24px transparent;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background-color: white;
+    }
+
+
+/* --- Grid Toolbars ---  */
+.grid_content .grid_toolbar {
+    background: #488ad2;
+    -ms-box-shadow: 0 1px 1px #b9c7d1;
+    box-shadow: 0 1px 1px #b9c7d1;
+}
+
+    .grid_content .grid_toolbar > ul {
+        padding: 12px 15px;
+        height: 28px;
+        display: none;
+    }
+
+    .grid_content .grid_toolbar li {
+        background-color: #FFFFFF;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.04), rgba(255, 255, 255, 0.04));
+        border: 1px solid #2663A6;
+        -ms-border-radius: 3px 3px 3px 3px;
+        border-radius: 3px 3px 3px 3px;
+        -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -2px 0 rgba(102, 102, 102, 0.3) inset, 0 0 10px rgba(255, 255, 255, 0.3) inset, 0 2px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -2px 0 rgba(102, 102, 102, 0.3) inset, 0 0 10px rgba(255, 255, 255, 0.3) inset, 0 2px 4px rgba(0, 0, 0, 0.2);
+        color: #515151;
+        cursor: pointer;
+        float: left;
+        font-size: 12px;
+        list-style: none outside none;
+        margin-right: 8px;
+        padding: 7px 10px;
+        -ms-text-shadow: 0 1px 0 #FFFFFF;
+        text-shadow: 0 1px 0 #FFFFFF;
+    }
+
+        .grid_content .grid_toolbar li:hover {
+            -ms-transition: background-color 500ms ease-in-out;
+            transition: background-color 500ms ease-in-out;
+            -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -2px 0 rgba(66, 67, 68, 0.3) inset, 0 0 10px rgba(255, 255, 255, 0.3) inset, 0 2px 4px #1CD6FF;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -2px 0 rgba(66, 67, 68, 0.3) inset, 0 0 10px rgba(255, 255, 255, 0.3) inset, 0 2px 4px #1CD6FF;
+            color: #0673A6 !important;
+            background-color: #FFF;
+        }
+
+        .grid_content .grid_toolbar li:active {
+            -ms-box-shadow: 0px 0px 2px #494d58 inset;
+            box-shadow: 0px 0px 2px #494d58 inset;
+            -ms-transform: scale(0.98);
+            transform: scale(0.98);
+        }
+
+
+.tabs li .tab_notif {
+    display: none;
+    padding: 2px 4px;
+    -ms-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    background-color: #F4F34C;
+    border: 1px solid #FFFFAB;
+    -ms-box-shadow: 0 1px 2px #61630B;
+    box-shadow: 0 1px 2px #61630B;
+    color: #53580A;
+    margin-left: 5px;
+    width: 30px;
+    position: relative;
+}
+
+    .tabs li .tab_notif.important {
+        background: none repeat scroll 0 0 #F22828;
+        border: 1px solid #EF9999;
+        -ms-box-shadow: 0 1px 2px #D71717;
+        box-shadow: 0 1px 2px #D71717;
+        color: #FFFFFF;
+    }
+
+    .tabs li .tab_notif.blue {
+        background: none repeat scroll 0 0 #1CBEF4;
+        border: 1px solid #A3B5D2;
+        -ms-box-shadow: 0 1px 2px #0B445F;
+        box-shadow: 0 1px 2px #0B445F;
+        color: #FFF;
+    }
+
+
+.tabs li .tab_notif.green {
+        background-color: #96EE51;
+        border: 1px solid #CDFBA9;
+    }
+
+    .tabs li .tab_notif:hover {
+        border: 1px solid #210000 !important;
+    }
+
+.tab_notif.tab_notif_active {
+    border-bottom: 6px solid #000000 !important;
+    top: -4px;
+}
+
+
+.common_sprite {
+    background-image: url('WebResource.axd?d=GQaEDgbfxg5yCCa5uiLREozMnDByzT5-qqhzGyl_3ArG-n8sWmNmnY-mtvJhbuT_LZEF9bWgbRma5lhwmbcYnW6MCGHTwr_iuEHfSzsT5z-vfrbQV6Iz-Rva3vOIFlbzdyigIZfwac8D7R086qjwMQCg9L01&t=635791181779487992');
+}
+
+.rsInput.locked .lock > img, .rsInput.locked img.lock {
+    background: url('WebResource.axd?d=nd3WsCzYCWastcKlGfoqeZ__Ji8mcrJ0dYsbfRrwEV6ctQR2OGt_MnzTLH7KpaV4eDCaVh7sBuP0z0vrLyuu9TUTq9XHPwT73jDDEcSMC7bzLOYSgDz2J4HvhH6Gem67XRwV-z7aO2ZgU3KFBaoXZ9VrTfM1&t=635791181779487992') 5px 4px no-repeat;
+    display: inline;
+    visibility: inherit;
+}
+
+.locked {
+    cursor: not-allowed !important;
+}
+
+.rsInput.locked input, .rsInput.locked {
+    color: #4F4F4F;
+    cursor: not-allowed;
+}
+
+.rsButton.locked {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+
+.loading_small {
+    background: url('WebResource.axd?d=RCKLXM_qit_BuRz2rCURm1Y6fc2dLjEyMBMnGJt-MWKpDdKIj6jBQJTGe_il2peIsbhlsYGTqB08HEgDu2BqZvxhHREX_uBIOSe1fVmASpRmQVHGAnls6gG3SrdZXALbZf8ZlKfgCnwkhgkg8Nf2kv5SNUQ1&t=635791181779487992') 1px 2px no-repeat;
+}
+
+div.rsInput {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: bottom;
+}
+
+    div.rsInput > table {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #CBCBCB;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px #DEDEDE inset;
+        border-collapse: collapse;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        width: 100%;
+        position: relative;
+        top: 3px;
+        padding: 2px;
+    }
+
+        div.rsInput > table td {
+            padding: 0;
+        }
+
+    div.rsInput img {
+        vertical-align: middle;
+    }
+
+
+.rsInput .rsInputLang {
+    margin: 2px 4px 1px;
+    background-color: #7EC126;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.8;
+    text-align: center;
+    width: 20px;
+}
+
+.rsInput > table td input, .rsInput > table td textarea {
+    width: 100% !important;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0 none !important;
+    height: 22px;
+    padding: 1px;
+}
+
+
+.rsInput .lock > img, .rsInput img.lock {
+    visibility: hidden;
+}
+
+
+.rsInput > table .expand > img.common_sprite {
+    background-color: #F5F5F5;
+    background-position: -428px -167px;
+    border: 1px solid #B0B0B0;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 16px;
+    height: 20px;
+}
+
+    .rsInput > table .expand > img.common_sprite:hover {
+        background-color: #FFF;
+    }
+
+.rsInput > table .expand > img.selected {
+    background-color: #fffc74;
+}
+
+
+/*RsInput Old*/
+
+.rsInput > div.rsInputBox {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    background: #FFF;
+    border: 1px solid #CBCBCB;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px #DEDEDE inset;
+    padding: 1px 3px 2px 6px;
+}
+
+.rsInput > P {
+    margin-bottom: 5px;
+    color: #393939;
+    font-size: 12px;
+    font-style: italic;
+}
+
+    .rsInput > P > span, .rsInput > label > span {
+        color: #ED2149;
+        font-size: 15px;
+    }
+
+.rsInput .rsInputBox input {
+    border: 0 none !important;
+    /*background: #FFF;*/
+    height: 21px;
+}
+
+.rsInput select {
+    border: 0 none !important;
+    background: #FFF;
+    height: 23px;
+    padding: 2px 0;
+}
+
+    .rsInput select > option {
+        padding: 5px;
+    }
+
+
+.rsInputAutoComplete {
+    position: absolute;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    box-shadow: 3px 3px 12px #CDCDCD;
+    display: none;
+    text-align: left;
+    z-index: 1000;
+    max-height: 250px;
+    overflow: auto;
+    min-width: 150px;
+}
+
+    .rsInputAutoComplete > div {
+        padding: 3px 5px;
+        font-size: 13px;
+        cursor: pointer;
+        border-bottom: 1px solid #D5D5D5;
+    }
+
+        .rsInputAutoComplete > div:hover {
+            background-color: #b9fad6;
+        }
+
+        .rsInputAutoComplete > div img {
+            background: url('WebResource.axd?d=GQaEDgbfxg5yCCa5uiLREozMnDByzT5-qqhzGyl_3ArG-n8sWmNmnY-mtvJhbuT_LZEF9bWgbRma5lhwmbcYnW6MCGHTwr_iuEHfSzsT5z-vfrbQV6Iz-Rva3vOIFlbzdyigIZfwac8D7R086qjwMQCg9L01&t=635791181779487992') no-repeat scroll -105px -3px #FFFFFF;
+            float: right;
+            height: 16px;
+            vertical-align: middle;
+            width: 17px;
+        }
+
+.rsInput label {
+    margin-left: 5px;
+}
+
+.rsInput > input[type='checkbox'] {
+    vertical-align: middle;
+}
+/* rs Button*/
+.rsButton {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #F2F2F2 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 4px #BBBBBB;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    font-size: 11px;
+    margin-right: 10px;
+    min-width: 20px;
+    padding: 5px 7px;
+    vertical-align: bottom;
+}
+
+.inpt_date {
+     border: 1px solid #BBBBBB;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 4px #BBBBBB;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    font-size: 11px;
+    margin-right: 10px;
+    min-width: 20px;
+    padding: 5px 7px;
+    vertical-align: bottom;
+}
+
+    .rsButton img {
+        background: url('WebResource.axd?d=GQaEDgbfxg5yCCa5uiLREozMnDByzT5-qqhzGyl_3ArG-n8sWmNmnY-mtvJhbuT_LZEF9bWgbRma5lhwmbcYnW6MCGHTwr_iuEHfSzsT5z-vfrbQV6Iz-Rva3vOIFlbzdyigIZfwac8D7R086qjwMQCg9L01&t=635791181779487992') no-repeat;
+        vertical-align: middle;
+        width: 27px;
+    }
+
+    .rsButton:hover {
+        border: 1px solid #767676 !important;
+        box-shadow: 0 0 8px #BBBBBB;
+    }
+
+    .rsButton:active {
+        transform: scale(0.98);
+    }
+
+.btn_blue {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d8ce0', endColorstr='#0b5c9a',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(to bottom, #1D8CE0 0%, #0B5C9A 100%) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+}
+
+    .btn_blue:hover {
+        background: linear-gradient(to top, #1D8CE0 0%, #0B5C9A 100%) repeat scroll 0 0 transparent;
+        box-shadow: 0 0 3px #0B5C9A inset;
+    }
+
+.btn_green {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ec126', endColorstr='#67ab0f',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(to bottom, #7EC126 0%, #67AB0F 100%) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+}
+
+    .btn_green:hover {
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ec126', endColorstr='#67ab0f',GradientType=0 ); /* IE6-9 */
+        background: linear-gradient(to top, #7EC126 0%, #67AB0F 100%) repeat scroll 0 0 transparent;
+    }
+
+.btn_red {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd4663', endColorstr='#ae2b4b',GradientType=0 ) !important; /* IE6-9 */
+    background: linear-gradient(to bottom, #D25252 0%, #C14141 100%) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+}
+
+    .btn_red:hover {
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd4663', endColorstr='#ae2b4b',GradientType=0 ) !important; /* IE6-9 */
+        background: linear-gradient(to bottom, #C14141 0%, #D25252 100%) repeat scroll 0 0 transparent;
+    }
+
+.btn_gray {
+    background: linear-gradient(to bottom, #848484 0%, #565656 100%) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+}
+
+    .btn_gray:hover {
+        background: linear-gradient(to bottom, #565656 0%, #848484 100%) repeat scroll 0 0 transparent;
+    }
+
+.btn_yellow {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffad1', endColorstr='#ffee65',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(to bottom, #FFFAD1 0%, #FFEE65 100%) repeat scroll 0 0 transparent;
+    color: #262626;
+}
+
+    .btn_yellow:hover {
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffad1', endColorstr='#ffee65',GradientType=0 ); /* IE6-9 */
+        background: linear-gradient(to bottom, #FFFAD1 0%, #FFEE65 100%) repeat scroll 0 0 transparent;
+    }
+
+.btn_cyan {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3BC8A9', endColorstr='#1EAD8D',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(to bottom, #3BC8A9 0%, #1EAD8D 100%) repeat scroll 0 0 transparent;
+    color: white;
+}
+
+    .btn_cyan:hover {
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1EAD8D', endColorstr='#3BC8A9',GradientType=0 ); /* IE6-9 */
+        background: linear-gradient(to bottom, #1EAD8D 0%, #3BC8A9 100%) repeat scroll 0 0 transparent;
+    }
+
+.rsButton.disabled {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    border: 1px solid #E8E4E4;
+    box-shadow: none;
+    color: #959595;
+    cursor: default;
+}
+
+    .rsButton.disabled:hover {
+        border: 1px solid #E8E4E4 !important;
+    }
+
+    .rsButton.disabled:active {
+        transform: none !important;
+    }
+/* rsMultiDroppdown*/
+
+
+.rsMD_Options {
+    display: none;
+    position: absolute;
+    padding: 5px 7px 8px;
+    text-align: left;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    box-shadow: 3px 3px 12px #CDCDCD;
+    z-index: 1000;
+}
+
+    .rsMD_Options > div {
+        padding: 7px 2px 2px;
+    }
+
+.rsMD_input {
+    border: 1px solid #cecece;
+    padding: 2px;
+    width: 100% !important;
+    height: 18px;
+    border-radius: 4px 0 0 4px;
+}
+
+
+
+.rsMD_buttons {
+    padding: 2px;
+}
+
+    .rsMD_buttons > input {
+        font-size: 11px;
+        cursor: pointer;
+    }
+
+.rsMD_Clear {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    margin-bottom: 6px;
+    text-decoration: underline;
+    width: 125px;
+}
+
+.rsMD_OK {
+    margin-right: 3px;
+}
+/**/
+
+.rsInput_notValid > div.rsInputBox, input.rsInput_notValid, select.rsInput_notValid, .rsInput_notValid > table, .rsInput_notValid > div.rsFileUpload {
+    border: 1px solid red !important;
+}
+
+.rsInput_notValid label {
+    color: #D02B2B;
+}
+
+
+/* rsLiveSearch */
+
+
+
+.rsLiveSearch > ul {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-shadow: 3px 3px 5px #DEDEDE;
+    list-style: none outside none;
+    margin: 0;
+    max-height: 300px;
+    min-width: 150px;
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    z-index: 100;
+    display: none;
+}
+
+    .rsLiveSearch > ul > li {
+        border-bottom: 1px solid #F2F2F2;
+        padding: 6px 2px 4px 8px;
+        cursor: pointer;
+        color: #4A4A4A;
+    }
+
+        .rsLiveSearch > ul > li:nth-child(2n+1) {
+            background-color: #EBEBEB;
+        }
+
+        .rsLiveSearch > ul > li:hover {
+            background-color: #D2D2D2;
+        }
+
+
+.rsLiveSearch .expand:hover {
+    background-color: #EAEAEA;
+}
+
+.rsLiveSearch li.ls_selected {
+    background-color: #FFFCA7;
+}
+/* rsDate */
+.rsDate > div.CloseOnOutsideClick {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BEBEBE;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 5px 10px #999999;
+    font-size: 11px;
+    padding: 14px;
+    display: none;
+    position: absolute;
+    z-index: 100;
+}
+
+.rsDate table > caption {
+    color: #818181;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.rsDate > input {
+    text-align: center;
+    width: 97%;
+    font-size: 11px !important;
+    height: 24px;
+    border: 1px solid #CECECE;
+    border-radius: 4px;
+}
+
+.rsDate > .rsInputBox > input {
+    text-align: center;
+    padding: 1px;
+}
+
+.rsDate select {
+    border: 1px solid #B1B1B1 !important;
+    height: 24px;
+}
+
+.rsDate .rsDateRefresh {
+    background: none repeat scroll 0 0 #D96E28;
+    border: 1px solid #B85C1F;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin-top: 15px;
+    padding: 6px;
+    text-align: center;
+    text-shadow: 0 1px 0 #9C4F1C;
+    cursor: pointer;
+}
+
+.rsDate .rsDateStart {
+    height: 34px;
+    vertical-align: top;
+}
+
+.rsDate .rsDateDay {
+    border: 1px solid #B1B1B1 !important;
+    height: 20px;
+    text-align: center;
+    width: 35px;
+}
+
+.rsDate .rsDateMonth {
+    width: 60px;
+}
+
+.rsDate .rsDateYear {
+    width: 65px;
+}
+
+/*rsNumberInterval*/
+.rsNumberInterval > div.CloseOnOutsideClick {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BEBEBE;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 5px 10px #999999;
+    font-size: 11px;
+    padding: 14px;
+    display: none;
+    position: absolute;
+    z-index: 100;
+}
+
+
+.rsNumberInterval table > caption {
+    color: #818181;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.rsNumberInterval > input {
+    text-align: center;
+    width: 97%;
+    font-size: 11px !important;
+    height: 24px;
+    border: 1px solid #CECECE;
+    border-radius: 4px;
+}
+
+.rsNumberInterval > .rsInputBox > input {
+    text-align: center;
+    padding: 1px;
+}
+
+.rsNumberInterval .rsIntervalRefresh {
+    background: none repeat scroll 0 0 #D96E28;
+    border: 1px solid #B85C1F;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 6px;
+    text-align: center;
+    text-shadow: 0 1px 0 #9C4F1C;
+    cursor: pointer;
+}
+
+.rsNumberInterval .rsIntervalReset {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+    .rsNumberInterval .rsIntervalReset:hover {
+        text-decoration: underline;
+    }
+
+.rsNumberInterval .inputNumber {
+    border: 1px solid #B1B1B1 !important;
+    height: 20px;
+    text-align: center;
+    width: 65px;
+}
+
+.rsNumberInterval .inputNotValid {
+    border: 1px solid red !important;
+}
+
+
+
+
+
+
+.datePickerDays {
+    position: absolute;
+    background: #FFF;
+    -ms-box-shadow: 5px 5px 15px #c3c3c3;
+    box-shadow: 5px 5px 15px #c3c3c3;
+    float: left;
+    padding: 10px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
+    .datePickerDays table {
+        padding: 0;
+        margin: 0;
+        border-collapse: collapse;
+        font-size: 12px;
+        font-family: Arial;
+    }
+
+        .datePickerDays table thead td {
+            font-weight: bold;
+        }
+
+    .datePickerDays td {
+        border: 1px solid #efefef;
+        text-align: center;
+        vertical-align: middle;
+        padding: 5px;
+        color: #5d5d5d;
+        cursor: pointer;
+    }
+
+    .datePickerDays thead td:hover {
+        background: none;
+        cursor: default;
+    }
+
+    .datePickerDays td:hover {
+        background: #ececec;
+        color: #5d5d5d !important;
+    }
+
+    .datePickerDays .currentDay {
+        font-weight: bold;
+        color: #3f3f3f;
+    }
+
+    .datePickerDays .selectedDay {
+        background: #f9a605;
+        color: #FFF !important;
+    }
+
+/*-----------*/
+
+
+.rsInputCorrected {
+    background: #FDFFAB !important;
+}
+
+/* rsFileUpload*/
+
+.rsInput > .rsFileUpload {
+    height: 28px;
+}
+
+    .rsInput > .rsFileUpload > .inp {
+        background-color: #FFFFFF;
+        border: 1px solid #CDC7C7;
+        float: left;
+        width: 83%;
+        height: 100%;
+    }
+
+        .rsInput > .rsFileUpload > .inp > input[type="text"] {
+            border: medium none;
+            height: 26px;
+            width: 95%;
+        }
+
+    .rsInput > .rsFileUpload > .upl {
+        float: left;
+        background-color: #B7B7B7;
+        border: medium none;
+        color: #FFFFFF;
+        cursor: pointer;
+        width: 70px;
+    }
+
+.rsInput.locked > .rsFileUpload > .upl, .rsInput.locked > .rsFileUpload > .upl > span {
+    cursor: not-allowed;
+}
+
+    .rsInput.locked > .rsFileUpload > .upl > span > input[type="file"] {
+        display: none;
+    }
+
+.rsInput > .rsFileUpload > .upl > span {
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 48px;
+    margin-left: 12px;
+    height: 30px;
+}
+
+    .rsInput > .rsFileUpload > .upl > span > input[type="file"] {
+        cursor: pointer;
+        direction: ltr;
+        font-size: 23px;
+        margin: 0;
+        filter: alpha(opacity=0);
+        -ms-opacity: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        -webkit-transform: translate(-300px, 0) scale(4);
+        -moz-transform: translate(-300px, 0) scale(4);
+        -ms-transform: translate(-300px, 0) scale(4);
+        -o-transform: translate(-300px, 0) scale(4);
+        transform: translate(-300px, 0) scale(4);
+    }
+
+    .rsInput > .rsFileUpload > .upl > span > span {
+        display: inline-block;
+        left: 0;
+        margin: 0;
+        padding-top: 5px;
+        position: absolute;
+        top: 0;
+    }
+
+
+/* End  tabs */

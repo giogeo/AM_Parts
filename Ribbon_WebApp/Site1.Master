@@ -1,0 +1,700 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Ribbon_WebApp.Site1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc2" %>
+
+<%@ Register Assembly="SlimeeLibrary" Namespace="SlimeeLibrary" TagPrefix="cc1" %> 
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <title>AM-Parts</title>
+    <script src="scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.ribbon.js" type="text/javascript"></script>
+    <script src="scripts/page.js" type="text/javascript"></script>
+    <script type="text/javascript" src="scripts/datepickr.js"></script>    
+    <link href="style.css" rel="Stylesheet" type="text/css" /> 
+    <link href="scripts/tgt_card.css" rel="Stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+    
+    <style media="print">
+        #noPrint, .noPrint * {
+            display: none !important;
+        }
+
+        #yesPrint {
+            display: block !important;
+        }
+    </style>
+
+    <style type="text/css">
+        .lnkSubmit {
+            -moz-border-radius: 1em;
+            -webkit-border-radius: 1em;
+            border-radius: 1em;
+            background: no-repeat;
+            background-image: url("/images/icons/1448240553_invoice.ico");
+            background-position: 0px 0px;
+            background-size: 64px;
+            color: White;
+            cursor: pointer;
+        }
+
+        .lnkSubmit1 {
+            -moz-border-radius: 1em;
+            -webkit-border-radius: 1em;
+            border-radius: 1em;
+            border: none;
+            height: 32px;
+            width: 52px;
+            cursor: pointer;
+        }
+
+        .popup-wrapper {
+            margin: 20px auto;
+            display: inline-block;
+            background: #fff;
+            border-radius: 3px;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .popup-header {
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px 30px;
+            text-align: center;
+            border-bottom: solid 1px #eee;
+        }
+
+        .popup-content {
+            padding: 20px 30px;
+        }
+
+        .form-group {
+            padding: 7px 0;
+        }
+
+        .form-group input {
+            display: block;
+            border: solid 1px #eee;
+            padding: 6px 12px;
+            border-radius: 3px;
+        }    
+
+         .form-group input, .form-group button {
+            width: 100%;
+            padding: 10px 15px;
+        }   
+
+        .btn-success, .btn-danger {
+            color: #fff;
+        }
+
+        .btn-success {
+            background-color: #8CC152;
+        }
+
+        .btn-success:hover {
+            background-color: #A0D468;
+        }    
+
+        .btn-danger {
+            background-color: #E9573F;
+        }
+
+        .btn-danger:hover {
+            background-color: #FC6E51;
+        }
+    </style>         
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            document.getElementById('taxID').onchange = function () {
+                var text = document.getElementById('taxID').value;
+                var txt_l = text.length;
+                // you can modify the validation sentence, for example, if text == "aaa", page will post back;
+
+                if (txt_l > 8) {
+                    __doPostBack("taxID", 0);
+                }
+                else {
+                    return false;
+                }
+            }
+        });
+    </script> 
+
+    <script type="text/javascript">
+        tday = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        tmonth = new Array("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+
+        function GetClock() {
+            var d = new Date();
+            var nday = d.getDay(), nmonth = d.getMonth(), ndate = d.getDate(), nyear = d.getYear();
+            if (nyear < 1000) nyear += 1900;
+            var nhour = d.getHours(), nmin = d.getMinutes(), nsec = d.getSeconds(), ap;
+
+            // if (nhour == 0) { ap = " AM"; nhour = 12; } 
+            // else if (nhour < 12) { ap = " AM"; }
+            // else if (nhour == 12) { ap = " PM"; }
+            // else if (nhour > 12) { ap = " PM"; nhour -= 12; }
+
+            if (nmin <= 9) nmin = "0" + nmin;
+            if (nsec <= 9) nsec = "0" + nsec;
+            document.getElementById('datebox').innerHTML = " " + ndate + "." + (nmonth + 1) + "." + nyear + " ";
+            document.getElementById('clockbox').innerHTML = " " + nhour + ":" + nmin + ":" + nsec + "";
+        }
+
+        window.onload = function () {
+            GetClock();
+            setInterval(GetClock, 1000);
+        }
+    </script>  
+    
+    <script type="text/javascript">
+        function clk_Del() {
+
+            if (document.getElementById("CheckBox4").checked) {
+                document.getElementById("CheckBox4").checked = false;
+                __doPostBack("CheckBox4", 0);
+            } else {
+                document.getElementById("CheckBox4").checked = true;
+                __doPostBack("CheckBox4", 0);
+            }
+        }
+
+        function chked1() {
+
+            if (document.getElementById('WeatherTbilisi').checked) {
+                document.getElementById('WeatherBorjomi').checked = false;
+                document.getElementById('WeatherBakuriani').checked = false;
+                window.open("http://www.accuweather.com/en/ge/tbilisi/171705/daily-weather-forecast/171705", "_blank");
+                // window.location.href = 'http://www.accuweather.com/en/ge/tbilisi/171705/daily-weather-forecast/171705';
+            }
+        }
+
+        function chked2() {
+            if (document.getElementById('WeatherBorjomi').checked) {
+                document.getElementById('WeatherTbilisi').checked = false;
+                document.getElementById('WeatherBakuriani').checked = false;
+                window.open("http://www.accuweather.com/en/ge/borjomi/171480/weather-forecast/171480", "_blank");
+                // window.location.href = 'http://www.accuweather.com/en/ge/borjomi/171480/weather-forecast/171480';
+            }
+        }
+
+        function chked3() {
+            if (document.getElementById('WeatherBakuriani').checked) {
+                document.getElementById('WeatherTbilisi').checked = false;
+                document.getElementById('WeatherBorjomi').checked = false;
+                window.open("http://www.accuweather.com/en/ge/bakuriani/171485/weather-forecast/171485", "_blank");
+            }
+        }
+
+        function InsDone() {
+            alert('დამატება განხორციელდა წარმატებით');
+            window.location = 'statements.aspx#statements';
+        }
+    </script> 
+
+</head>
+
+<body oncontextmenu="return false" onload="setunchecked();">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        
+        <div class="mainContainer" id="noPrint">
+            <ul class="ribbon">
+                <li>
+                    <ul class="orb">
+                        <li><a href="javascript:void(0);" accesskey="1" class="orbButton">&nbsp;</a><span>Menu</span>
+                            <ul>
+                                <!-- onclick="javascript:void window.open('http://localhost:37689/mobile.aspx#popupInfo&ui-state=dialog','1435260969399','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;"  -->
+                                <li><a href="#">
+                                    <img src="ribbon/images/icon_print.png" alt="Print" onclick="window.print(); return false;" /><span>Print</span></a> </li>
+
+                                <li><a href="Suppliers.aspx" title="მომწოდებელი/შემსყიდველი">
+                                    <asp:ImageButton ID="Link_Suppliers" runat="server" ImageUrl="images/icons/Groupe-Suppliers.ico" Height="32" ToolTip="მომწოდებელი/შემსყიდველი" OnClick="Link_Suppliers_Click" /><span>Buyer/Seller</span></a>
+                                    <ul>
+                                        <li>
+                                            <a id="A4" runat="server">
+                                                <img src="images/icons/Suppliers-add.ico" height="32" alt="Save" /><span>დამატება</span></a></li>
+                                        <li>
+                                            <a id="A5" runat="server" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+                                                <img src="images/icons/Suppliers-Delete.ico" height="32" alt="Del" /><span>წაშლა</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#waybills" title="სასაქონლო ზედნადებები">
+                                    <asp:ImageButton ID="btn_WBS" runat="server" ImageUrl="images/rs_ge.jpg" Width="32" />
+                                    <span>RS.GE</span></a>
+                                    <ul>
+                                        <li>
+                                            <a id="op_popup" runat="server" onclick="javascript:location.href='nwaybills.aspx'">
+                                                <img src="images/icons/netvibes.ico" height="32" alt="Add WayBill" /><span>დამატება</span></a>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="Waybills_in" runat="server" OnClick="Waybills_in_Click">
+                                                <img src="images/icons/1457700811_Enter.ico" Height="32" />
+                                                <span>მიღებული</span>
+                                            </asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <a id="Waybills_out" runat="server" onclick="javascript:location.href='waybills.aspx'">
+                                                <img src="images/icons/1457700801_Exit.ico" height="32" />
+                                                <span>გაცემული</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="A1" runat="server" href="~/addwbitems.aspx">
+                                                <img src="images/icons/1457700811_Enter.ico" height="32" />
+                                                <span>იმპორტი</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="ribbon/images/icon_about.png" alt="About" />
+                                        <span>About</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="lnkbtn_exit" runat="server" OnClick="lnkbtn_exit_Click" OnClientClick="javascript:window.open('','_self').close();" ToolTip="Exit">
+                                        <img src="ribbon/images/icon_exit.png" />
+                                        <span>Exit</span>
+                                    </asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <ul class="menu">
+                        <li><a href="default.aspx#home" accesskey="2">Home</a> 
+                            <ul>
+                                <li>
+                                    <h2 style="font-size: 125%;">
+                                        <span id="clockbox"></span>| <span id="datebox"></span></h2>
+                                    <div>
+                                        <asp:ImageButton ID="btn_calc" runat="server" ImageUrl="images/icons/1446137769_calculator.ico" Height="42" ToolTip="კალკულატორი" OnClick="btn_calc_Click" />
+
+                                    </div>
+
+                                    <div class="ribbon-list">
+                                        <div>
+                                            <a id="q1"></a>
+                                        </div>
+                                        <div>
+                                            <a id="q2"></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h2 style="font-size: 125%;">
+                                        <span>ამინდი</span></h2>
+                                    <div>   
+                                        <table>
+                                            <tr>
+                                                <td><input id="WeatherTbilisi" type="checkbox" class="rsButton" onclick="chked1()" /></td>   <td>თბილისი</td>
+                                            </tr>
+                                        </table>                                           
+                                    </div>
+                                    <div>
+                                        <table>
+                                            <tr>
+                                                <td><input id="WeatherBorjomi" type="checkbox" class="rsButton" onclick="chked2()"/></td>   <td>ბორჯომი</td>
+                                            </tr>
+                                        </table> 
+                                    </div>
+                                    <div>
+                                        <table>
+                                            <tr>
+                                                <td><input id="WeatherBakuriani" type="checkbox" class="rsButton" onclick="chked3()" /></td>   <td>ბაკურიანი</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <h2>
+                                        Themes</h2>
+                                    <div class="ribbon-list">
+                                        <div>
+                                            <img src="ribbon/images/icon_small_theme.png" alt="Theme" />
+                                            ფონის არჩევა
+                                            <ul class="ribbon-theme">
+                                                <li class="ribbon-windows7">Windows 7</li>
+                                                <li class="ribbon-simple">Simple</li>
+                                            </ul>                                        
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li id="notif_tab" runat="server" visible="false">
+                                    <h2>Notifications</h2>
+                                    <div id="notif_div" runat="server" class="imageContainer">
+                                        <b id="notif_txt" runat="server" class="ntfy" onclick ="document.getElementById('notif_div_messege').style.visibility = 'visible';" onmouseout= "document.getElementById('notif_div_messege').style.visibility = 'hidden';" ></b>
+                                        
+                                    </div>
+                                    <div id="notif_div_messege" class="imageContainer2" style="visibility: hidden">   
+                                        <table style="">
+                                            <tr>
+                                                <td style="width:25px; padding-left: 3px; text-align: left"><span id="txt_ntfy_green" runat="server" style="color:#2bff13"></span></td>   
+                                                <td style="width:25px; padding-left: 3px; text-align: center"><span id="txt_ntfy_yellow" runat="server" style="color:#fbf60b"></span></td> 
+                                                <td style="width:25px; padding-left: 3px; text-align: right"><span id="txt_ntfy_red" runat="server" style="color:#fe0e0e"></span></td>
+                                            </tr>
+                                        </table>                                           
+                                    </div>
+                                </li>
+
+                                <li id="user_tab" runat="server">
+                                    <h2 id="txt_user_area" runat="server">User's Area</h2>
+
+                                    <div id="login_pnl" runat="server">
+                                        <asp:ImageButton ID="ImgBtn_login" runat="server" ImageUrl="http://icons.iconarchive.com/icons/saviourmachine/chat/128/shopping-icon.png" Height="42" ToolTip="სისტემაში შესვლა" />
+                                    </div>                                    
+
+                                    <div id="log_status" runat="server" Visible="false">
+                                        <asp:Image ID="ImgBtn_log_status" runat="server" ImageUrl="/images/animated-light-bulb-image-0022.gif" Height="42" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li><a href="#procurements" accesskey="4" >ტენდერები</a>
+                            <ul>
+                                <li>
+                                    <h2>
+                                        ელექტრონული ტენდერები</h2>
+                                    <div>
+                                        <img id="btn_new_tndr" runat="server" src="ribbon/images/add_new.png" title="ტენდერის დამატება" onclick="javascript:location.href='nwaybills.aspx#procurements'" />
+                                        <asp:Label ID="lbl_new_t" runat="server" Text="ახალი"></asp:Label>
+                                    </div>
+                                    <div>
+                                        <img id="btn_supply" runat="server" src="ribbon/images/supply_32X32.png" title="დამატება" onclick="javascript:location.href='nwaybills.aspx#procurements'" />
+                                        <asp:Label ID="Label1" runat="server" Text="მიწოდება"></asp:Label>
+
+                                    </div>
+                                    <div>
+                                        <asp:ImageButton ID="btn_new_list" runat="server" ImageUrl="ribbon/images/list_icon.png" OnClick="list_tndr" ToolTip="ტენდერების ჩამონათვალი" /><br />
+                                        ს ი ა
+                                    </div>
+                                    <div>
+                                        <img id="btn_DelSelected" runat="server" src="images/icons/Button_Close.ico" onclick="clk_Del();" width="32" />
+                                        <asp:CheckBox ID="CheckBox4" runat="server" Text="მონიშნე"/>
+                                    </div>
+                                </li>                      
+                            </ul>
+                        </li>
+                        <li><a href="#itemlist" accesskey="5" >მაღაზია</a>
+                            <ul>
+                                <li>
+                                    <h2>
+                                        პროდუქციის პანელი</h2>
+                                    <div>
+                                        <asp:ImageButton ID="ImgBtn_AddNewGood" runat="server" ImageUrl="ribbon/images/add_new.png" ToolTip="ტენდერის დამატება" /><br /> 
+                                        დამატება
+                                    </div>
+                                    <div>
+                                        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="ribbon/images/supply_32X32.png" /><br />
+                                        გაყიდვა
+
+                                    </div>
+                                    <div style="display:none;">
+                                        <asp:ImageButton ID="ImgBtn_GoodsList" runat="server" ImageUrl="ribbon/images/list_icon.png" ToolTip="პროდუქციის ჩამონათვალი" OnClick="ImgBtn_GoodsList_Click" /><br />
+                                        ს ი ა
+                                    </div>  
+                                    <div onclick="javascript:location.href='default.aspx?action=goods#itemlist'">
+                                        <img   src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/search-32.png"  title="პროდუქციის ძებნა" />
+                                        ძებნა
+                                    </div>                              
+                                </li>                      
+                            </ul>
+                        </li>
+                        <li><a href="#statements" accesskey="6" onclick="javascript:location.href='statements.aspx#statements'"" >ფინანსები</a>             
+                            <ul>
+                                <li>
+                                    <h2>
+                                        ბუღალტერიის პანელი</h2>
+                                    <div>                                    
+                                        <asp:ImageButton ID="img_pays" runat="server" CssClass="lnkSubmit1" ImageUrl="~/images/icons/Exchange.png" PostBackUrl="#statements" /> <br />
+                                        შემოს/გასავ                            
+                                    </div>
+                                    <div>
+                                        <asp:ImageButton ID="img_overspends" runat="server" ImageUrl="ribbon/images/overspends_icon.png" Width="64" Height="32" PostBackUrl="#statements" /><br />
+                                        გადახარჯვა
+
+                                    </div>
+                                    <div>
+                                        <asp:ImageButton ID="btn_AddExpenses" runat="server" ImageUrl="ribbon/images/unnamed.png" onmouseover="this.src='ribbon/images/add_new.png'" onmouseout="this.src='ribbon/images/unnamed.png'" PostBackUrl="#statements" Width="52px" ToolTip="შემოსავლის ან ხარჯის დამატება"/><br />                                    
+                                    </div>                                
+                                </li> 
+                                <li>
+                                    <h2>
+                                        ჟურნალი</h2>
+                                    <div>                                    
+                                        <asp:ImageButton ID="ImageButton3" runat="server" CssClass="lnkSubmit1" ImageUrl="~/images/icons/journal.ico" PostBackUrl="#statements" /> <br />
+                                        გასასწორებლები                            
+                                    </div>
+                                </li>                     
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>           
+        <! !>
+        <cc2:ModalPopupExtender ID="MPopup_AddNewSupplier" PopupControlID="add_NewSupplier_Form" TargetControlID="A4" CancelControlID="btn_closeAddNewSuppliers" runat="server" BackgroundCssClass="ModalBackground">
+
+        </cc2:ModalPopupExtender>
+        <asp:Panel ID="add_NewSupplier_Form" runat="server" CssClass="modalPopup" Height="500px">
+            <div id="Div2" runat="server" style="max-height: 500px; overflow: auto;">
+                <asp:ImageButton href="#" ID="btn_closeAddNewSuppliers" runat="server" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" ToolTip="ფანჯრის დახურვა" />
+                <fieldset>
+                    <legend>ახალი კლიენტის რეგისტრაცია:</legend>
+                    <table>
+                        <tbody>
+                            <tr style="width: 99%;">
+                                <cc2:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server"
+                                    TargetControlID="taxID"
+                                    UseContextKey="true" CompletionInterval="1500"
+                                    CompletionSetCount="20"
+                                    ServiceMethod="GetCompletionList" MinimumPrefixLength="4"
+                                    CompletionListCssClass="autoCompleteList"
+                                    CompletionListItemCssClass="autoCompleteListItem"
+                                    CompletionListHighlightedItemCssClass="autoCompleteSelectedListItem">
+                                </cc2:AutoCompleteExtender>
+                                <th style="text-align: right;" class="auto-style5">
+                                    <label for="taxID">საგად. კოდი:</label></th>
+                                <td class="auto-style4">
+                                    <asp:TextBox name="taxID" ID="taxID" runat="server"></asp:TextBox></td>
+                                <th style="text-align: right;" class="auto-style5">
+                                    <label for="mobile">მობ:</label></th>
+                                <td class="auto-style4">
+                                    <asp:TextBox name="mobile" ID="mobile" runat="server"></asp:TextBox></td>
+                            </tr>
+
+                            <tr style="width: 99%;">
+                                <th style="width: 15%; text-align: right;">
+                                    <label for="companyName">სახელი:</label></th>
+                                <td style="width: 20%;">
+                                    <asp:TextBox name="companyName" ID="companyName" runat="server"></asp:TextBox></td>
+                                <th style="width: 15%; text-align: right;">
+                                    <label for="lendline">ტელ:</label></th>
+                                <td style="width: 20%;">
+                                    <asp:TextBox name="lendline" ID="lendline" runat="server"></asp:TextBox></td>
+                            </tr>
+
+                            <tr style="width: 99%;">
+                                <th style="width: 15%; text-align: right;">
+                                    <label for="regAddress">იურიდ. მისამართი:</label></th>
+                                <td style="width: 20%;">
+                                    <asp:TextBox name="regAddress" ID="regAddress" runat="server"></asp:TextBox></td>
+                                <th style="width: 15%; text-align: right;">
+                                    <label for="email">ელ.ფოსტა:</label></th>
+                                <td style="width: 20%;">
+                                    <asp:TextBox name="email" ID="email" runat="server"></asp:TextBox></td>
+                            </tr>
+
+                            <tr style="width: 99%;">
+                                <th style="width: 15%; text-align: right;">
+                                    <label for="companyHead">ხელმძღვანელი:</label></th>
+                                <td style="width: 20%;">
+                                    <asp:TextBox name="companyHead" ID="companyHead" runat="server"></asp:TextBox></td>
+                                <th style="width: 15%; text-align: right;">
+                                    <label for="bank_details">საბანკო ანგ:</label></th>
+                                <td style="width: 20%;">
+                                    <asp:TextBox name="bank_details" ID="bank_details" runat="server"></asp:TextBox></td>
+                            </tr>
+                            <tr style="width: 99%;">
+                                <th style="width: 30%;">
+                                    <label style="float: right" for="clientType">კლიენტის ტიპი:</label></th>
+                                <td style="width: 70%;" colspan="3">
+                                    <asp:DropDownList name="clientType" ID="clientType" runat="server" Style="margin: auto; width: 100%; padding: 10px;">
+                                        <asp:ListItem Value="">აირჩიეთ კლიენტის ტიპი</asp:ListItem>
+                                        <asp:ListItem Value="1">მყიდველი</asp:ListItem>
+                                        <asp:ListItem Value="-1">მომწოდებელი</asp:ListItem>
+
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <asp:ImageButton ID="A12" runat="server" ImageUrl="images/icons/Suppliers-add.ico" Height="32" alt="Save" ToolTip="დამატება" OnClick="btn_AddSupplier_Click" />
+            </div>
+        </asp:Panel>
+
+        <cc2:ModalPopupExtender ID="MPopup_Pnl_AddExpenses" PopupControlID="Pnl_AddExpenses" TargetControlID="btn_AddExpenses" CancelControlID="btn_Close_AddExpenses" runat="server" BackgroundCssClass="ModalBackground">
+
+        </cc2:ModalPopupExtender>
+        <asp:Panel ID="Pnl_AddExpenses" runat="server" CssClass="modalPopup" Height="500px">
+            <div id="nm3" runat="server" style="max-height: 500px; overflow: auto;">
+                <asp:ImageButton href="#" ID="btn_Close_AddExpenses" runat="server" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" ToolTip="ფანჯრის დახურვა" />
+                <fieldset>
+                    <legend class="rsGridHeaderRow">შემოსავალი/გასავალი დამატება:</legend>
+                    <table>
+                        <tbody class="rsGridContainer">
+
+                            <tr style="width: 99%;" class="rsGridDataRow">
+                                <th class="auto-style5">
+                                    <label for="ExpenseName" class="auto-style5">სახელწოდება:</label>
+                                </th>
+
+                                <td class="auto-style4">
+                                    <input id="ExpenseName" runat="server" class="rsGridSelect" style="height:28px; width:410px" />
+                                </td>
+
+                                <th class="auto-style5">
+                                    <label for="ExpensePrice" class="auto-style5">ღირებულება:</label>
+                                </th>
+
+                                <td class="auto-style4">
+                                    <input id="ExpensePrice" runat="server" class="rsGridSelect" style="height:30px; width:410px" />
+                                </td>
+                            </tr>
+
+                            <tr style="width: 99%;" class="rsGridDataRow">
+                                <th class="auto-style5">
+                                    <label for="ExpenseContractorId" class="auto-style5">კლიენტის სახ:</label>
+                                </th>
+
+                                <td class="auto-style4">
+                                    <asp:DropDownList ID="ExpenseContractorId" runat="server" Height="32px" Width="410px" CssClass="rsGridSelect">
+                                        <asp:ListItem Selected="True" Value="">აირჩიეთ კლიენტი</asp:ListItem>
+                                    </asp:DropDownList>
+                                    
+                                </td>
+
+                                <th class="auto-style5">
+                                    <label for="ExpenseType" class="auto-style5">ხარჯის სახე:</label>
+                                </th>
+
+                                <td class="auto-style4">
+                                    <asp:DropDownList ID="ExpenseType" runat="server" Height="32px" Cssclass="rsGridSelect" Width="410px">
+                                        <asp:ListItem Selected="True" Value="0">აირჩიეთ ტიპი</asp:ListItem>
+                                        <asp:ListItem Value="1">შემოსავალი</asp:ListItem>
+                                        <asp:ListItem Value="-1">გასავალი</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+
+                            <tr style="width: 99%;" class="rsGridDataRow">
+                                <th class="auto-style5"">
+                                    <label for="ExpenseDate" class="auto-style5">გადახ. თარიღი:</label>
+                                </th>
+                                <td class="auto-style4">
+                                    <cc2:CalendarExtender ID="CalendarExtender4" runat="server" Format="dd/MM/yyyy" FirstDayOfWeek="Monday" TargetControlID="ExpenseDate" />
+                                    <asp:TextBox ID="ExpenseDate" runat="server" onclick="this.placeholder=''" onfocus="this.select()" onblur="this.placeholder=!this.placeholder?'ოპერაციის თარიღი':this.placeholder" placeholder="ოპერაციის თარიღი" CssClass="rsGridSelect" PaneWidth="120px" FirstDayOfWeek="Monday" Height="28px" Width="410px"></asp:TextBox>
+                                </td>
+
+                                <th class="auto-style5">
+                                    <label for="ExpenseWay" class="auto-style5">გადახ. წყარო:</label>
+                                </th>
+
+                                <td class="auto-style4">
+                                    <asp:DropDownList ID="ExpenseWay" runat="server" Height="32px" Width="410px" CssClass="rsGridSelect" >
+                                        <asp:ListItem Selected="True" Value="0">აირჩიეთ მეთოდი</asp:ListItem>
+                                        <asp:ListItem Value="1">ნაღდი / სალარო</asp:ListItem>
+                                        <asp:ListItem Value="2">უნაღდო / ბანკი</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+
+                            <tr style="width: 99%;" class="rsGridDataRow">
+                                <th class="auto-style5">
+                                    <label for="ExpenseComment" class="auto-style5">დამატებითი ინფორმაცია</label>
+                                </th>
+                                <td colspan="3">
+                                    <asp:TextBox ID="ExpenseComment" runat="server" TextMode="MultiLine" style="width: 91%; height:240px; text-align: left; float:left"  />
+                                </td>
+                            </tr>                          
+
+                        </tbody>
+                        <tfoot class="rsGridSummaryRow">
+                            <tr>
+                                <td colspan="4">
+                                    <asp:Button ID="btn_add_expences" runat="server" CssClass="lnkSubmit1" Text="SAVE" OnClick="btn_add_expences_Click" />
+                                    &nbsp;
+                                    <asp:Button ID="btn_close_expences" runat="server" CssClass="lnkSubmit1" Text="Cancel" />
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </fieldset>
+            </div>
+        </asp:Panel>
+        
+        <cc2:ModalPopupExtender ID="MPopup_add_InJournal" PopupControlID="add_InJournal" TargetControlID="ImageButton3" CancelControlID="btn_Close_addInJournal" runat="server" BackgroundCssClass="ModalBackground">
+
+        </cc2:ModalPopupExtender>
+        <div id="add_InJournal" runat="server" class="modalPopup" >
+            <asp:ImageButton href="#" ID="btn_Close_addInJournal" runat="server" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" ToolTip="ფანჯრის დახურვა" />
+            <asp:TextBox ID="txt_InJournal_Name" runat="server" placeholder='ვინ/სახელწოდება' onfocus="this.placeholder = ''" onblur="this.placeholder = 'მოკლე აღწერილობა'"  Style="border: solid 1.8px #7f7f7f; -moz-border-radius: 4px; -webkit-border-radius: 4px; width: 252px;"></asp:TextBox><br /><br />
+            <asp:TextBox ID="txt_InJournal_Price" runat="server" placeholder='ვალის თანხა' onfocus="this.placeholder = ''" onblur="this.placeholder = 'მოკლე აღწერილობა'"  Style="border: solid 1.8px #7f7f7f; -moz-border-radius: 4px; -webkit-border-radius: 4px; width: 252px;"></asp:TextBox><br /><br />
+            <asp:TextBox ID="txt_InJournal_Text" runat="server" TextMode="MultiLine" Rows="6" placeholder='მოკლე აღწერილობა' onfocus="this.placeholder = ''" onblur="this.placeholder = 'მოკლე აღწერილობა'"  Style="border: solid 1.8px #7f7f7f; -moz-border-radius: 4px; -webkit-border-radius: 4px; width: 250px;"></asp:TextBox><br /><br />
+            <asp:Button ID="btn_add_InJournal" runat="server" Text="დამატება" Style="border: solid 1.8px #7f7f7f; -moz-border-radius: 4px; -webkit-border-radius: 4px; width: 120px; height: 30px" OnClick="btn_add_InJournal_Click" /> <br /><br />
+        </div>
+
+        <cc2:ModalPopupExtender ID="MPopup_Login" runat="server" PopupControlID="Pnl_Login" TargetControlID="ImgBtn_login" CancelControlID="Button2" BackgroundCssClass="ModalBackground">
+
+        </cc2:ModalPopupExtender>
+        <asp:Panel ID="Pnl_Login" runat="server" class="popup-wrapper" style="min-width: 400px;" DefaultButton="btn_login">
+            <div class="popup-header">Welcome back </div>
+
+            <div class="popup-content">
+                <div class="form-group">
+                    <asp:TextBox ID="username" runat="server" placeholder="Email / User Name" />
+                </div>
+                <div class="form-group">
+                    <asp:TextBox ID="userpass" runat="server" TextMode="password" placeholder="Password" />
+                </div>
+                <div class="form-group">
+                    <asp:Button ID="btn_login" runat="server" CssClass="btn-success" OnClick="btn_login_Click" style="width: 100%;" Text="Sign in" />
+                    <asp:Button ID="Button2" runat="server" CssClass="lnkSubmit1" Text="Close" style="display: none;" />
+                </div>
+            </div>
+        </asp:Panel> 
+
+        <cc2:ModalPopupExtender ID="MPopup_error" runat="server" PopupControlID="ErrorBox" TargetControlID="Button100" CancelControlID="error_close" BackgroundCssClass="ModalBackground" >
+
+        </cc2:ModalPopupExtender>        
+        <div id="ErrorBox" runat="server" class="popup-wrapper" style="min-width: 400px;">
+            <div class="popup-header">
+                შ ე ც დ ო მ ა !
+            </div>
+            
+
+            <div class="popup-content">
+                
+                <div class="form-group">
+                    <h2>
+                        <label style='background-image: url("https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-24.png"); background-repeat: no-repeat;'></label>
+                        <strong>
+                            მომხმარებლის სახელი ან პაროლი არასწორია.
+                        </strong>
+                    </h2>
+                </div>
+                <div class="form-group">
+                    <asp:Button ID="error_close" runat="server" CssClass="btn-danger" style="width: 100%;" Text="დახურვა"/>
+                </div>
+            </div>
+        </div>
+        <asp:Button ID="Button100" runat="server" Text="Button" Style="display: none;" />
+            
+        <asp:ContentPlaceHolder ID="Left_side" runat="server">
+            
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="Center_side" runat="server">   
+            
+        </asp:ContentPlaceHolder>
+            
+    </form>    
+</body>
+</html>

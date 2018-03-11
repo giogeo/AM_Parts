@@ -1,0 +1,183 @@
+/* -----------------------------------------------------------------------------
+ * Positions Table
+ * -------------------------------------------------------------------------- */
+/* With fixed layout, we can set column widths for the header very precisely */
+b.table-header {
+    background-color: #808080;
+    border-spacing: 0;
+    color: #FFFFFF;
+    table-layout: fixed;
+    text-shadow: none;
+    width: 100%;
+}
+
+.table-body {
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-header th,
+.table-body td {
+    padding: 0 5px;
+}
+
+.table-body td {
+    border-bottom: solid 1px #B2B2B2;
+}
+
+/* Following styles are required by iScroll, otherwise scroller will not work */
+.table-body-wrapper {
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Following styles are required by iScroll, otherwise scroller will not work */
+.table-body-scroller {
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+}
+--css/t--
+
+/* -----------------------------------------------------------------------------
+ * Narrow Layout (0-499)
+ * -------------------------------------------------------------------------- */
+@media screen and (max-width: 499px) {
+    .layout-info:before { content: "Narrow Layout (0-499)"; }
+
+    /* hide priority2 and priority3 columns */
+    .priority2 { display: none; }
+    .priority3 { display: none; }
+
+    /* Table styles */
+    .table-header th {
+        font-size: 16px;
+        height: 44px;
+    }
+    .table-body td {
+        font-size: 16px;
+        height: 44px;
+    }
+
+    /* Column Widths */
+    .symbol {
+        width: 20%;
+    }
+
+    .quantity {
+        width: 20%;
+    }
+
+    .last-trade {
+        width: 30%;
+    }
+
+    .market-value {
+        width: 30%;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ *  Medium Layout (500-899)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 500px) and (max-width: 899px) {
+    .layout-info:before { content: "Medium Layout (500-899)"; }
+
+    /* hide priority3 columns */
+    .priority3 { display: none; }
+
+    /* Table styles */
+    .table-header th {
+        font-size: 16px;
+        height: 44px;
+    }
+    .table-body td {
+        font-size: 16px;
+        height: 44px;
+    }
+
+    /* Column Widths */
+    .symbol {
+        width: 15%;
+    }
+
+    .quantity {
+        width: 15%;
+    }
+
+    .last-trade {
+        width: 20%;
+    }
+
+    .market-value {
+        width: 20%;
+    }
+
+    .price-paid {
+        width: 20%;
+    }
+
+    .gain-percent {
+        width: 10%;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ *  Wide Layout (900+)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 900px) {
+    .layout-info:before { content: "Wide Layout (900+)"; }
+
+    /* Table styles */
+    /* Table styles */
+    .table-header th {
+        font-size: 13px;
+        height: 30px;
+    }
+    .table-body td {
+        font-size: 14px;
+        height: 32px;
+    }
+
+    /* Column Widths */
+    .security {
+        width: 25%;
+    }
+
+    .symbol {
+        width: 7%;
+    }
+
+    .quantity {
+        width: 7%;
+    }
+
+    .last-trade {
+        width: 9%;
+    }
+
+    .market-value {
+        width: 12%;
+    }
+
+    .price-paid {
+        width: 10%;
+    }
+
+    .total-cost {
+        width: 10%;
+    }
+
+    .gain {
+        width: 11%;
+    }
+
+    .gain-percent {
+        width: 9%;
+    }
+}

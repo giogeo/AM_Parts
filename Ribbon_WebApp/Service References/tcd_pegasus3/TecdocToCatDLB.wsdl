@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://server.cat.tecdoc.net" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="TecdocToCatDLB" targetNamespace="http://server.cat.tecdoc.net" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://webservicepilot.tecdoc.net:80/pegasus-3-0/services/TecdocToCatDLB.soapEndpoint?xsd=1" namespace="http://server.cat.tecdoc.net" />
+    </xsd:schema>
+  </types>
+  <message name="getNewArticleManufacturers">
+    <part name="getNewArticleManufacturers" element="tns:getNewArticleManufacturers" />
+  </message>
+  <message name="getNewArticleManufacturersResponse">
+    <part name="getNewArticleManufacturersResponse" element="tns:getNewArticleManufacturersResponse" />
+  </message>
+  <message name="getAmBrandAddress">
+    <part name="getAmBrandAddress" element="tns:getAmBrandAddress" />
+  </message>
+  <message name="getAmBrandAddressResponse">
+    <part name="getAmBrandAddressResponse" element="tns:getAmBrandAddressResponse" />
+  </message>
+  <message name="getPegasusVersionInfo2">
+    <part name="getPegasusVersionInfo2" element="tns:getPegasusVersionInfo2" />
+  </message>
+  <message name="getPegasusVersionInfo2Response">
+    <part name="getPegasusVersionInfo2Response" element="tns:getPegasusVersionInfo2Response" />
+  </message>
+  <message name="getModelSeries">
+    <part name="getModelSeries" element="tns:getModelSeries" />
+  </message>
+  <message name="getModelSeriesResponse">
+    <part name="getModelSeriesResponse" element="tns:getModelSeriesResponse" />
+  </message>
+  <message name="getVehicleIdsByCriteria">
+    <part name="getVehicleIdsByCriteria" element="tns:getVehicleIdsByCriteria" />
+  </message>
+  <message name="getVehicleIdsByCriteriaResponse">
+    <part name="getVehicleIdsByCriteriaResponse" element="tns:getVehicleIdsByCriteriaResponse" />
+  </message>
+  <message name="getLanguages">
+    <part name="getLanguages" element="tns:getLanguages" />
+  </message>
+  <message name="getLanguagesResponse">
+    <part name="getLanguagesResponse" element="tns:getLanguagesResponse" />
+  </message>
+  <message name="getCountries">
+    <part name="getCountries" element="tns:getCountries" />
+  </message>
+  <message name="getCountriesResponse">
+    <part name="getCountriesResponse" element="tns:getCountriesResponse" />
+  </message>
+  <message name="getCountryGroups">
+    <part name="getCountryGroups" element="tns:getCountryGroups" />
+  </message>
+  <message name="getCountryGroupsResponse">
+    <part name="getCountryGroupsResponse" element="tns:getCountryGroupsResponse" />
+  </message>
+  <message name="getCriteria2">
+    <part name="getCriteria2" element="tns:getCriteria2" />
+  </message>
+  <message name="getCriteria2Response">
+    <part name="getCriteria2Response" element="tns:getCriteria2Response" />
+  </message>
+  <message name="getVehicleIdsByKTypeNumber">
+    <part name="getVehicleIdsByKTypeNumber" element="tns:getVehicleIdsByKTypeNumber" />
+  </message>
+  <message name="getVehicleIdsByKTypeNumberResponse">
+    <part name="getVehicleIdsByKTypeNumberResponse" element="tns:getVehicleIdsByKTypeNumberResponse" />
+  </message>
+  <message name="getVehicleIdsByMotor2">
+    <part name="getVehicleIdsByMotor2" element="tns:getVehicleIdsByMotor2" />
+  </message>
+  <message name="getVehicleIdsByMotor2Response">
+    <part name="getVehicleIdsByMotor2Response" element="tns:getVehicleIdsByMotor2Response" />
+  </message>
+  <message name="getVehicleIdsByMark">
+    <part name="getVehicleIdsByMark" element="tns:getVehicleIdsByMark" />
+  </message>
+  <message name="getVehicleIdsByMarkResponse">
+    <part name="getVehicleIdsByMarkResponse" element="tns:getVehicleIdsByMarkResponse" />
+  </message>
+  <message name="getVehicleIdsByVendorId2">
+    <part name="getVehicleIdsByVendorId2" element="tns:getVehicleIdsByVendorId2" />
+  </message>
+  <message name="getVehicleIdsByVendorId2Response">
+    <part name="getVehicleIdsByVendorId2Response" element="tns:getVehicleIdsByVendorId2Response" />
+  </message>
+  <message name="getVehicleIdsByKeyNumberPlates3">
+    <part name="getVehicleIdsByKeyNumberPlates3" element="tns:getVehicleIdsByKeyNumberPlates3" />
+  </message>
+  <message name="getVehicleIdsByKeyNumberPlates3Response">
+    <part name="getVehicleIdsByKeyNumberPlates3Response" element="tns:getVehicleIdsByKeyNumberPlates3Response" />
+  </message>
+  <message name="getAxleBrakeSizes">
+    <part name="getAxleBrakeSizes" element="tns:getAxleBrakeSizes" />
+  </message>
+  <message name="getAxleBrakeSizesResponse">
+    <part name="getAxleBrakeSizesResponse" element="tns:getAxleBrakeSizesResponse" />
+  </message>
+  <message name="getAxleIdByTypeManCriteria3">
+    <part name="getAxleIdByTypeManCriteria3" element="tns:getAxleIdByTypeManCriteria3" />
+  </message>
+  <message name="getAxleIdByTypeManCriteria3Response">
+    <part name="getAxleIdByTypeManCriteria3Response" element="tns:getAxleIdByTypeManCriteria3Response" />
+  </message>
+  <message name="getAxleKeyNumbers">
+    <part name="getAxleKeyNumbers" element="tns:getAxleKeyNumbers" />
+  </message>
+  <message name="getAxleKeyNumbersResponse">
+    <part name="getAxleKeyNumbersResponse" element="tns:getAxleKeyNumbersResponse" />
+  </message>
+  <message name="getAxleIdByKeyNumber">
+    <part name="getAxleIdByKeyNumber" element="tns:getAxleIdByKeyNumber" />
+  </message>
+  <message name="getAxleIdByKeyNumberResponse">
+    <part name="getAxleIdByKeyNumberResponse" element="tns:getAxleIdByKeyNumberResponse" />
+  </message>
+  <message name="getAxleByIds2">
+    <part name="getAxleByIds2" element="tns:getAxleByIds2" />
+  </message>
+  <message name="getAxleByIds2Response">
+    <part name="getAxleByIds2Response" element="tns:getAxleByIds2Response" />
+  </message>
+  <message name="getMotorIdsByManuIdCriteria2">
+    <part name="getMotorIdsByManuIdCriteria2" element="tns:getMotorIdsByManuIdCriteria2" />
+  </message>
+  <message name="getMotorIdsByManuIdCriteria2Response">
+    <part name="getMotorIdsByManuIdCriteria2Response" element="tns:getMotorIdsByManuIdCriteria2Response" />
+  </message>
+  <message name="getMotorsByCarTypeManuIdTerm2">
+    <part name="getMotorsByCarTypeManuIdTerm2" element="tns:getMotorsByCarTypeManuIdTerm2" />
+  </message>
+  <message name="getMotorsByCarTypeManuIdTerm2Response">
+    <part name="getMotorsByCarTypeManuIdTerm2Response" element="tns:getMotorsByCarTypeManuIdTerm2Response" />
+  </message>
+  <message name="getMotorByIds2">
+    <part name="getMotorByIds2" element="tns:getMotorByIds2" />
+  </message>
+  <message name="getMotorByIds2Response">
+    <part name="getMotorByIds2Response" element="tns:getMotorByIds2Response" />
+  </message>
+  <message name="getVendorIds2">
+    <part name="getVendorIds2" element="tns:getVendorIds2" />
+  </message>
+  <message name="getVendorIds2Response">
+    <part name="getVendorIds2Response" element="tns:getVendorIds2Response" />
+  </message>
+  <message name="getMarkById">
+    <part name="getMarkById" element="tns:getMarkById" />
+  </message>
+  <message name="getMarkByIdResponse">
+    <part name="getMarkByIdResponse" element="tns:getMarkByIdResponse" />
+  </message>
+  <message name="getShortCuts2">
+    <part name="getShortCuts2" element="tns:getShortCuts2" />
+  </message>
+  <message name="getShortCuts2Response">
+    <part name="getShortCuts2Response" element="tns:getShortCuts2Response" />
+  </message>
+  <message name="getChildNodesAllLinkingTarget2">
+    <part name="getChildNodesAllLinkingTarget2" element="tns:getChildNodesAllLinkingTarget2" />
+  </message>
+  <message name="getChildNodesAllLinkingTarget2Response">
+    <part name="getChildNodesAllLinkingTarget2Response" element="tns:getChildNodesAllLinkingTarget2Response" />
+  </message>
+  <message name="getChildNodesPattern">
+    <part name="getChildNodesPattern" element="tns:getChildNodesPattern" />
+  </message>
+  <message name="getChildNodesPatternResponse">
+    <part name="getChildNodesPatternResponse" element="tns:getChildNodesPatternResponse" />
+  </message>
+  <message name="getGenericArticlesByManufacturer6">
+    <part name="getGenericArticlesByManufacturer6" element="tns:getGenericArticlesByManufacturer6" />
+  </message>
+  <message name="getGenericArticlesByManufacturer6Response">
+    <part name="getGenericArticlesByManufacturer6Response" element="tns:getGenericArticlesByManufacturer6Response" />
+  </message>
+  <message name="getArticleAccessoryList4">
+    <part name="getArticleAccessoryList4" element="tns:getArticleAccessoryList4" />
+  </message>
+  <message name="getArticleAccessoryList4Response">
+    <part name="getArticleAccessoryList4Response" element="tns:getArticleAccessoryList4Response" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTargetManufacturer">
+    <part name="getArticleLinkedAllLinkingTargetManufacturer" element="tns:getArticleLinkedAllLinkingTargetManufacturer" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTargetManufacturerResponse">
+    <part name="getArticleLinkedAllLinkingTargetManufacturerResponse" element="tns:getArticleLinkedAllLinkingTargetManufacturerResponse" />
+  </message>
+  <message name="getPegasusVersionInfo">
+    <part name="getPegasusVersionInfo" element="tns:getPegasusVersionInfo" />
+  </message>
+  <message name="getPegasusVersionInfoResponse">
+    <part name="getPegasusVersionInfoResponse" element="tns:getPegasusVersionInfoResponse" />
+  </message>
+  <message name="addDynamicAddress">
+    <part name="addDynamicAddress" element="tns:addDynamicAddress" />
+  </message>
+  <message name="addDynamicAddressResponse">
+    <part name="addDynamicAddressResponse" element="tns:addDynamicAddressResponse" />
+  </message>
+  <message name="getAmBrands">
+    <part name="getAmBrands" element="tns:getAmBrands" />
+  </message>
+  <message name="getAmBrandsResponse">
+    <part name="getAmBrandsResponse" element="tns:getAmBrandsResponse" />
+  </message>
+  <message name="getVehicleByIds3">
+    <part name="getVehicleByIds3" element="tns:getVehicleByIds3" />
+  </message>
+  <message name="getVehicleByIds3Response">
+    <part name="getVehicleByIds3Response" element="tns:getVehicleByIds3Response" />
+  </message>
+  <message name="getArticleIdsWithState">
+    <part name="getArticleIdsWithState" element="tns:getArticleIdsWithState" />
+  </message>
+  <message name="getArticleIdsWithStateResponse">
+    <part name="getArticleIdsWithStateResponse" element="tns:getArticleIdsWithStateResponse" />
+  </message>
+  <message name="getAssignedArticlesByIds4">
+    <part name="getAssignedArticlesByIds4" element="tns:getAssignedArticlesByIds4" />
+  </message>
+  <message name="getAssignedArticlesByIds4Response">
+    <part name="getAssignedArticlesByIds4Response" element="tns:getAssignedArticlesByIds4Response" />
+  </message>
+  <message name="getArticleDirectSearchAllNumbersWithState">
+    <part name="getArticleDirectSearchAllNumbersWithState" element="tns:getArticleDirectSearchAllNumbersWithState" />
+  </message>
+  <message name="getArticleDirectSearchAllNumbersWithStateResponse">
+    <part name="getArticleDirectSearchAllNumbersWithStateResponse" element="tns:getArticleDirectSearchAllNumbersWithStateResponse" />
+  </message>
+  <message name="getDirectArticlesByIds4">
+    <part name="getDirectArticlesByIds4" element="tns:getDirectArticlesByIds4" />
+  </message>
+  <message name="getDirectArticlesByIds4Response">
+    <part name="getDirectArticlesByIds4Response" element="tns:getDirectArticlesByIds4Response" />
+  </message>
+  <message name="getCriteriaDialogAttributs">
+    <part name="getCriteriaDialogAttributs" element="tns:getCriteriaDialogAttributs" />
+  </message>
+  <message name="getCriteriaDialogAttributsResponse">
+    <part name="getCriteriaDialogAttributsResponse" element="tns:getCriteriaDialogAttributsResponse" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTarget3">
+    <part name="getArticleLinkedAllLinkingTarget3" element="tns:getArticleLinkedAllLinkingTarget3" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTarget3Response">
+    <part name="getArticleLinkedAllLinkingTarget3Response" element="tns:getArticleLinkedAllLinkingTarget3Response" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTargetsByIds3">
+    <part name="getArticleLinkedAllLinkingTargetsByIds3" element="tns:getArticleLinkedAllLinkingTargetsByIds3" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTargetsByIds3Response">
+    <part name="getArticleLinkedAllLinkingTargetsByIds3Response" element="tns:getArticleLinkedAllLinkingTargetsByIds3Response" />
+  </message>
+  <message name="getNewArticleBrands">
+    <part name="getNewArticleBrands" element="tns:getNewArticleBrands" />
+  </message>
+  <message name="getNewArticleBrandsResponse">
+    <part name="getNewArticleBrandsResponse" element="tns:getNewArticleBrandsResponse" />
+  </message>
+  <message name="getNewArticleIds">
+    <part name="getNewArticleIds" element="tns:getNewArticleIds" />
+  </message>
+  <message name="getNewArticleIdsResponse">
+    <part name="getNewArticleIdsResponse" element="tns:getNewArticleIdsResponse" />
+  </message>
+  <message name="getVehiclesByKeyNumberPlates">
+    <part name="getVehiclesByKeyNumberPlates" element="tns:getVehiclesByKeyNumberPlates" />
+  </message>
+  <message name="getVehiclesByKeyNumberPlatesResponse">
+    <part name="getVehiclesByKeyNumberPlatesResponse" element="tns:getVehiclesByKeyNumberPlatesResponse" />
+  </message>
+  <message name="getVehicleByIds4">
+    <part name="getVehicleByIds4" element="tns:getVehicleByIds4" />
+  </message>
+  <message name="getVehicleByIds4Response">
+    <part name="getVehicleByIds4Response" element="tns:getVehicleByIds4Response" />
+  </message>
+  <message name="getGenericArticles">
+    <part name="getGenericArticles" element="tns:getGenericArticles" />
+  </message>
+  <message name="getGenericArticlesResponse">
+    <part name="getGenericArticlesResponse" element="tns:getGenericArticlesResponse" />
+  </message>
+  <message name="getAssignedArticlesByIds6">
+    <part name="getAssignedArticlesByIds6" element="tns:getAssignedArticlesByIds6" />
+  </message>
+  <message name="getAssignedArticlesByIds6Response">
+    <part name="getAssignedArticlesByIds6Response" element="tns:getAssignedArticlesByIds6Response" />
+  </message>
+  <message name="getAssignedArticlesByIds7">
+    <part name="getAssignedArticlesByIds7" element="tns:getAssignedArticlesByIds7" />
+  </message>
+  <message name="getAssignedArticlesByIds7Response">
+    <part name="getAssignedArticlesByIds7Response" element="tns:getAssignedArticlesByIds7Response" />
+  </message>
+  <message name="getArticlePartList">
+    <part name="getArticlePartList" element="tns:getArticlePartList" />
+  </message>
+  <message name="getArticlePartListResponse">
+    <part name="getArticlePartListResponse" element="tns:getArticlePartListResponse" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTargetManufacturer2">
+    <part name="getArticleLinkedAllLinkingTargetManufacturer2" element="tns:getArticleLinkedAllLinkingTargetManufacturer2" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTargetManufacturer2Response">
+    <part name="getArticleLinkedAllLinkingTargetManufacturer2Response" element="tns:getArticleLinkedAllLinkingTargetManufacturer2Response" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTarget4">
+    <part name="getArticleLinkedAllLinkingTarget4" element="tns:getArticleLinkedAllLinkingTarget4" />
+  </message>
+  <message name="getArticleLinkedAllLinkingTarget4Response">
+    <part name="getArticleLinkedAllLinkingTarget4Response" element="tns:getArticleLinkedAllLinkingTarget4Response" />
+  </message>
+  <message name="getKeyValues">
+    <part name="getKeyValues" element="tns:getKeyValues" />
+  </message>
+  <message name="getKeyValuesResponse">
+    <part name="getKeyValuesResponse" element="tns:getKeyValuesResponse" />
+  </message>
+  <message name="getManufacturers">
+    <part name="getManufacturers" element="tns:getManufacturers" />
+  </message>
+  <message name="getManufacturersResponse">
+    <part name="getManufacturersResponse" element="tns:getManufacturersResponse" />
+  </message>
+  <message name="getDirectArticlesByIds6">
+    <part name="getDirectArticlesByIds6" element="tns:getDirectArticlesByIds6" />
+  </message>
+  <message name="getDirectArticlesByIds6Response">
+    <part name="getDirectArticlesByIds6Response" element="tns:getDirectArticlesByIds6Response" />
+  </message>
+  <message name="getDirectArticlesByIds7">
+    <part name="getDirectArticlesByIds7" element="tns:getDirectArticlesByIds7" />
+  </message>
+  <message name="getDirectArticlesByIds7Response">
+    <part name="getDirectArticlesByIds7Response" element="tns:getDirectArticlesByIds7Response" />
+  </message>
+  <portType name="TecdocToCat">
+    <operation name="getNewArticleManufacturers">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getNewArticleManufacturersRequest" message="tns:getNewArticleManufacturers" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getNewArticleManufacturersResponse" message="tns:getNewArticleManufacturersResponse" />
+    </operation>
+    <operation name="getAmBrandAddress">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAmBrandAddressRequest" message="tns:getAmBrandAddress" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAmBrandAddressResponse" message="tns:getAmBrandAddressResponse" />
+    </operation>
+    <operation name="getPegasusVersionInfo2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getPegasusVersionInfo2Request" message="tns:getPegasusVersionInfo2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getPegasusVersionInfo2Response" message="tns:getPegasusVersionInfo2Response" />
+    </operation>
+    <operation name="getModelSeries">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getModelSeriesRequest" message="tns:getModelSeries" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getModelSeriesResponse" message="tns:getModelSeriesResponse" />
+    </operation>
+    <operation name="getVehicleIdsByCriteria">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByCriteriaRequest" message="tns:getVehicleIdsByCriteria" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByCriteriaResponse" message="tns:getVehicleIdsByCriteriaResponse" />
+    </operation>
+    <operation name="getLanguages">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getLanguagesRequest" message="tns:getLanguages" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getLanguagesResponse" message="tns:getLanguagesResponse" />
+    </operation>
+    <operation name="getCountries">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCountriesRequest" message="tns:getCountries" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCountriesResponse" message="tns:getCountriesResponse" />
+    </operation>
+    <operation name="getCountryGroups">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCountryGroupsRequest" message="tns:getCountryGroups" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCountryGroupsResponse" message="tns:getCountryGroupsResponse" />
+    </operation>
+    <operation name="getCriteria2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCriteria2Request" message="tns:getCriteria2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCriteria2Response" message="tns:getCriteria2Response" />
+    </operation>
+    <operation name="getVehicleIdsByKTypeNumber">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByKTypeNumberRequest" message="tns:getVehicleIdsByKTypeNumber" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByKTypeNumberResponse" message="tns:getVehicleIdsByKTypeNumberResponse" />
+    </operation>
+    <operation name="getVehicleIdsByMotor2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByMotor2Request" message="tns:getVehicleIdsByMotor2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByMotor2Response" message="tns:getVehicleIdsByMotor2Response" />
+    </operation>
+    <operation name="getVehicleIdsByMark">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByMarkRequest" message="tns:getVehicleIdsByMark" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByMarkResponse" message="tns:getVehicleIdsByMarkResponse" />
+    </operation>
+    <operation name="getVehicleIdsByVendorId2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByVendorId2Request" message="tns:getVehicleIdsByVendorId2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByVendorId2Response" message="tns:getVehicleIdsByVendorId2Response" />
+    </operation>
+    <operation name="getVehicleIdsByKeyNumberPlates3">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByKeyNumberPlates3Request" message="tns:getVehicleIdsByKeyNumberPlates3" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleIdsByKeyNumberPlates3Response" message="tns:getVehicleIdsByKeyNumberPlates3Response" />
+    </operation>
+    <operation name="getAxleBrakeSizes">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleBrakeSizesRequest" message="tns:getAxleBrakeSizes" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleBrakeSizesResponse" message="tns:getAxleBrakeSizesResponse" />
+    </operation>
+    <operation name="getAxleIdByTypeManCriteria3">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleIdByTypeManCriteria3Request" message="tns:getAxleIdByTypeManCriteria3" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleIdByTypeManCriteria3Response" message="tns:getAxleIdByTypeManCriteria3Response" />
+    </operation>
+    <operation name="getAxleKeyNumbers">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleKeyNumbersRequest" message="tns:getAxleKeyNumbers" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleKeyNumbersResponse" message="tns:getAxleKeyNumbersResponse" />
+    </operation>
+    <operation name="getAxleIdByKeyNumber">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleIdByKeyNumberRequest" message="tns:getAxleIdByKeyNumber" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleIdByKeyNumberResponse" message="tns:getAxleIdByKeyNumberResponse" />
+    </operation>
+    <operation name="getAxleByIds2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleByIds2Request" message="tns:getAxleByIds2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAxleByIds2Response" message="tns:getAxleByIds2Response" />
+    </operation>
+    <operation name="getMotorIdsByManuIdCriteria2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMotorIdsByManuIdCriteria2Request" message="tns:getMotorIdsByManuIdCriteria2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMotorIdsByManuIdCriteria2Response" message="tns:getMotorIdsByManuIdCriteria2Response" />
+    </operation>
+    <operation name="getMotorsByCarTypeManuIdTerm2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMotorsByCarTypeManuIdTerm2Request" message="tns:getMotorsByCarTypeManuIdTerm2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMotorsByCarTypeManuIdTerm2Response" message="tns:getMotorsByCarTypeManuIdTerm2Response" />
+    </operation>
+    <operation name="getMotorByIds2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMotorByIds2Request" message="tns:getMotorByIds2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMotorByIds2Response" message="tns:getMotorByIds2Response" />
+    </operation>
+    <operation name="getVendorIds2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVendorIds2Request" message="tns:getVendorIds2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVendorIds2Response" message="tns:getVendorIds2Response" />
+    </operation>
+    <operation name="getMarkById">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMarkByIdRequest" message="tns:getMarkById" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getMarkByIdResponse" message="tns:getMarkByIdResponse" />
+    </operation>
+    <operation name="getShortCuts2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getShortCuts2Request" message="tns:getShortCuts2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getShortCuts2Response" message="tns:getShortCuts2Response" />
+    </operation>
+    <operation name="getChildNodesAllLinkingTarget2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getChildNodesAllLinkingTarget2Request" message="tns:getChildNodesAllLinkingTarget2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getChildNodesAllLinkingTarget2Response" message="tns:getChildNodesAllLinkingTarget2Response" />
+    </operation>
+    <operation name="getChildNodesPattern">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getChildNodesPatternRequest" message="tns:getChildNodesPattern" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getChildNodesPatternResponse" message="tns:getChildNodesPatternResponse" />
+    </operation>
+    <operation name="getGenericArticlesByManufacturer6">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getGenericArticlesByManufacturer6Request" message="tns:getGenericArticlesByManufacturer6" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getGenericArticlesByManufacturer6Response" message="tns:getGenericArticlesByManufacturer6Response" />
+    </operation>
+    <operation name="getArticleAccessoryList4">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleAccessoryList4Request" message="tns:getArticleAccessoryList4" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleAccessoryList4Response" message="tns:getArticleAccessoryList4Response" />
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTargetManufacturer">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTargetManufacturerRequest" message="tns:getArticleLinkedAllLinkingTargetManufacturer" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTargetManufacturerResponse" message="tns:getArticleLinkedAllLinkingTargetManufacturerResponse" />
+    </operation>
+    <operation name="getPegasusVersionInfo">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getPegasusVersionInfoRequest" message="tns:getPegasusVersionInfo" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getPegasusVersionInfoResponse" message="tns:getPegasusVersionInfoResponse" />
+    </operation>
+    <operation name="addDynamicAddress">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/addDynamicAddressRequest" message="tns:addDynamicAddress" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/addDynamicAddressResponse" message="tns:addDynamicAddressResponse" />
+    </operation>
+    <operation name="getAmBrands">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAmBrandsRequest" message="tns:getAmBrands" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAmBrandsResponse" message="tns:getAmBrandsResponse" />
+    </operation>
+    <operation name="getVehicleByIds3">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleByIds3Request" message="tns:getVehicleByIds3" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleByIds3Response" message="tns:getVehicleByIds3Response" />
+    </operation>
+    <operation name="getArticleIdsWithState">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleIdsWithStateRequest" message="tns:getArticleIdsWithState" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleIdsWithStateResponse" message="tns:getArticleIdsWithStateResponse" />
+    </operation>
+    <operation name="getAssignedArticlesByIds4">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAssignedArticlesByIds4Request" message="tns:getAssignedArticlesByIds4" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAssignedArticlesByIds4Response" message="tns:getAssignedArticlesByIds4Response" />
+    </operation>
+    <operation name="getArticleDirectSearchAllNumbersWithState">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleDirectSearchAllNumbersWithStateRequest" message="tns:getArticleDirectSearchAllNumbersWithState" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleDirectSearchAllNumbersWithStateResponse" message="tns:getArticleDirectSearchAllNumbersWithStateResponse" />
+    </operation>
+    <operation name="getDirectArticlesByIds4">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getDirectArticlesByIds4Request" message="tns:getDirectArticlesByIds4" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getDirectArticlesByIds4Response" message="tns:getDirectArticlesByIds4Response" />
+    </operation>
+    <operation name="getCriteriaDialogAttributs">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCriteriaDialogAttributsRequest" message="tns:getCriteriaDialogAttributs" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getCriteriaDialogAttributsResponse" message="tns:getCriteriaDialogAttributsResponse" />
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTarget3">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTarget3Request" message="tns:getArticleLinkedAllLinkingTarget3" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTarget3Response" message="tns:getArticleLinkedAllLinkingTarget3Response" />
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTargetsByIds3">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTargetsByIds3Request" message="tns:getArticleLinkedAllLinkingTargetsByIds3" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTargetsByIds3Response" message="tns:getArticleLinkedAllLinkingTargetsByIds3Response" />
+    </operation>
+    <operation name="getNewArticleBrands">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getNewArticleBrandsRequest" message="tns:getNewArticleBrands" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getNewArticleBrandsResponse" message="tns:getNewArticleBrandsResponse" />
+    </operation>
+    <operation name="getNewArticleIds">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getNewArticleIdsRequest" message="tns:getNewArticleIds" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getNewArticleIdsResponse" message="tns:getNewArticleIdsResponse" />
+    </operation>
+    <operation name="getVehiclesByKeyNumberPlates">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehiclesByKeyNumberPlatesRequest" message="tns:getVehiclesByKeyNumberPlates" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehiclesByKeyNumberPlatesResponse" message="tns:getVehiclesByKeyNumberPlatesResponse" />
+    </operation>
+    <operation name="getVehicleByIds4">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleByIds4Request" message="tns:getVehicleByIds4" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getVehicleByIds4Response" message="tns:getVehicleByIds4Response" />
+    </operation>
+    <operation name="getGenericArticles">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getGenericArticlesRequest" message="tns:getGenericArticles" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getGenericArticlesResponse" message="tns:getGenericArticlesResponse" />
+    </operation>
+    <operation name="getAssignedArticlesByIds6">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAssignedArticlesByIds6Request" message="tns:getAssignedArticlesByIds6" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAssignedArticlesByIds6Response" message="tns:getAssignedArticlesByIds6Response" />
+    </operation>
+    <operation name="getAssignedArticlesByIds7">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAssignedArticlesByIds7Request" message="tns:getAssignedArticlesByIds7" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getAssignedArticlesByIds7Response" message="tns:getAssignedArticlesByIds7Response" />
+    </operation>
+    <operation name="getArticlePartList">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticlePartListRequest" message="tns:getArticlePartList" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticlePartListResponse" message="tns:getArticlePartListResponse" />
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTargetManufacturer2">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTargetManufacturer2Request" message="tns:getArticleLinkedAllLinkingTargetManufacturer2" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTargetManufacturer2Response" message="tns:getArticleLinkedAllLinkingTargetManufacturer2Response" />
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTarget4">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTarget4Request" message="tns:getArticleLinkedAllLinkingTarget4" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getArticleLinkedAllLinkingTarget4Response" message="tns:getArticleLinkedAllLinkingTarget4Response" />
+    </operation>
+    <operation name="getKeyValues">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getKeyValuesRequest" message="tns:getKeyValues" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getKeyValuesResponse" message="tns:getKeyValuesResponse" />
+    </operation>
+    <operation name="getManufacturers">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getManufacturersRequest" message="tns:getManufacturers" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getManufacturersResponse" message="tns:getManufacturersResponse" />
+    </operation>
+    <operation name="getDirectArticlesByIds6">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getDirectArticlesByIds6Request" message="tns:getDirectArticlesByIds6" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getDirectArticlesByIds6Response" message="tns:getDirectArticlesByIds6Response" />
+    </operation>
+    <operation name="getDirectArticlesByIds7">
+      <input wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getDirectArticlesByIds7Request" message="tns:getDirectArticlesByIds7" />
+      <output wsam:Action="http://server.cat.tecdoc.net/TecdocToCat/getDirectArticlesByIds7Response" message="tns:getDirectArticlesByIds7Response" />
+    </operation>
+  </portType>
+  <binding name="TecdocToCatPortBinding" type="tns:TecdocToCat">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getNewArticleManufacturers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAmBrandAddress">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPegasusVersionInfo2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getModelSeries">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleIdsByCriteria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getLanguages">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountries">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountryGroups">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCriteria2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleIdsByKTypeNumber">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleIdsByMotor2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleIdsByMark">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleIdsByVendorId2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleIdsByKeyNumberPlates3">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAxleBrakeSizes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAxleIdByTypeManCriteria3">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAxleKeyNumbers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAxleIdByKeyNumber">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAxleByIds2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMotorIdsByManuIdCriteria2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMotorsByCarTypeManuIdTerm2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMotorByIds2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVendorIds2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMarkById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getShortCuts2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getChildNodesAllLinkingTarget2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getChildNodesPattern">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getGenericArticlesByManufacturer6">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleAccessoryList4">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTargetManufacturer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPegasusVersionInfo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addDynamicAddress">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAmBrands">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleByIds3">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleIdsWithState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAssignedArticlesByIds4">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleDirectSearchAllNumbersWithState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDirectArticlesByIds4">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCriteriaDialogAttributs">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTarget3">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTargetsByIds3">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNewArticleBrands">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNewArticleIds">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehiclesByKeyNumberPlates">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVehicleByIds4">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getGenericArticles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAssignedArticlesByIds6">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAssignedArticlesByIds7">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticlePartList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTargetManufacturer2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getArticleLinkedAllLinkingTarget4">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getKeyValues">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getManufacturers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDirectArticlesByIds6">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDirectArticlesByIds7">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TecdocToCatDLB">
+    <port name="TecdocToCatPort" binding="tns:TecdocToCatPortBinding">
+      <soap:address location="http://webservicepilot.tecdoc.net:80/pegasus-3-0/services/TecdocToCatDLB.soapEndpoint" />
+    </port>
+  </service>
+</definitions>
